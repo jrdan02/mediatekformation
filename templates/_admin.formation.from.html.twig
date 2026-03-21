@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="container mt-4" decreption="details formation">
+    
+
+    {# Formulaire de création ou modification #}
+    {{ form_start(formformation) }}
+    <div class="row mb-3">
+        <div class="col-md-3">
+            {{ form_row(formformation.publishedAt ) }} <br>
+        </div>
+        <div class="col-md-3">
+            {{ form_row(formformation.title) }}<br>
+        </div>
+        <div class="col-md-3">
+            {{ form_row(formformation.description) }}<br>
+        </div>
+        <div class="col-md-3">
+            {{ form_row(formformation.videoId) }}<br>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            {{ form_row(formformation.playlist) }}<br>
+        </div>
+        <div class="col-md-6">
+            {{ form_row(formformation.categories) }}<br>
+        </div>
+    </div>  
+
+    {{ form_end(formformation) }}
+</div>
+{% endblock %}
