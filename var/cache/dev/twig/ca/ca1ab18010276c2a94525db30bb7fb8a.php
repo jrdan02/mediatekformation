@@ -1474,6 +1474,6 @@ class __TwigTemplate_d0bf8d93ba74b07b6d225596a29d9c5f extends Template
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

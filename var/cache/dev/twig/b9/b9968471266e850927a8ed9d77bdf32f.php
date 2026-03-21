@@ -81,6 +81,6 @@ class __TwigTemplate_3bb4c2dffeec7109b2b7a885b95f5a9d extends Template
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.txt.twig\" %}
-", "@email/default/notification/body.txt.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.txt.twig");
+", "@email/default/notification/body.txt.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.txt.twig");
     }
 }

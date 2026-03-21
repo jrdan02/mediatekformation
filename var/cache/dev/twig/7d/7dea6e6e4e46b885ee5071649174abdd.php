@@ -609,6 +609,6 @@ class __TwigTemplate_50ee7de938c3c926190c0225d3476396 extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

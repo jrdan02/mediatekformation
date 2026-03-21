@@ -225,6 +225,6 @@ class __TwigTemplate_d9d1c7c5df0a5f09e65e48027636d6dd extends Template
 {% block footer %}{% endblock %}
 
 
-", "pages/cgu.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/pages/cgu.html.twig");
+", "pages/cgu.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/pages/cgu.html.twig");
     }
 }

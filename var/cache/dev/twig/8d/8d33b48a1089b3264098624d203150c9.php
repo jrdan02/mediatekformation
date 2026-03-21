@@ -291,6 +291,6 @@ class __TwigTemplate_3f20858b0dd48973a8576982754bf7d2 extends Template
     {% set attr = attr|merge({class: (attr.class|default('') ~ ' button')|trim}) %}
     {{- parent() -}}
 {%- endblock button_widget %}
-", "foundation_6_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/foundation_6_layout.html.twig");
+", "foundation_6_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/foundation_6_layout.html.twig");
     }
 }

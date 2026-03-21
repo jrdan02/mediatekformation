@@ -1178,6 +1178,6 @@ class __TwigTemplate_46ca340e02bfb9c46b257b441b1c3905 extends Template
         </span>
     {%- endif -%}
 {%- endblock form_help %}
-", "bootstrap_3_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_3_layout.html.twig");
+", "bootstrap_3_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_3_layout.html.twig");
     }
 }

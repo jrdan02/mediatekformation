@@ -1850,6 +1850,6 @@ class __TwigTemplate_ca9109b9f5061f4fb5b2e386242728e1 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
     }
 }

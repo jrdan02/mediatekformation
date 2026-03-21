@@ -132,6 +132,6 @@ class __TwigTemplate_999d519e0028d8c067799bef75d9f188 extends Template
 .exception-message-wrapper .container {
     min-height: unset;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

@@ -573,6 +573,6 @@ class __TwigTemplate_060d89ea3266b348c0ceaff6626a082a extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/validator.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
+", "@WebProfiler/Collector/validator.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
     }
 }

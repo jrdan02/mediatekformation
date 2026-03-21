@@ -975,6 +975,6 @@ class __TwigTemplate_4aeab96a82bca472dbc440a1d54b3c4d extends Template
         </td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }

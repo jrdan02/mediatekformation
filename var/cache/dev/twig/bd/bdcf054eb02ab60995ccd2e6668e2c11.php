@@ -242,6 +242,6 @@ class __TwigTemplate_0117e0c738311ad4a3234eb94acdb5b3 extends Template
 {% endblock %}
 
 
-", "pages/accueil.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/pages/accueil.html.twig");
+", "pages/accueil.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/pages/accueil.html.twig");
     }
 }

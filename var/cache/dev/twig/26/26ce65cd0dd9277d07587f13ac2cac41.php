@@ -311,6 +311,6 @@ class __TwigTemplate_2544e17564689025b9c4c185dc28be69 extends Template
         {{- form_rest(form) -}}
     </table>
 {%- endblock form_widget_compound -%}
-", "form_table_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
+", "form_table_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
     }
 }

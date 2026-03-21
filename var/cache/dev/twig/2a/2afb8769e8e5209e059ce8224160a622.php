@@ -196,6 +196,6 @@ class __TwigTemplate_0e90118078685bc02ec5ebc52f411d6b extends Template
                 {{ formation.description|nl2br }}
         </div>
     </div>
-{% endblock %}", "pages/formation.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/pages/formation.html.twig");
+{% endblock %}", "pages/formation.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/pages/formation.html.twig");
     }
 }

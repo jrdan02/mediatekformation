@@ -249,6 +249,6 @@ class __TwigTemplate_b115ef7db6f4cd8857497942f790687a extends Template
         <!-- javascript -->
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
     </body>
-</html>", "base.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/base.html.twig");
+</html>", "base.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/base.html.twig");
     }
 }

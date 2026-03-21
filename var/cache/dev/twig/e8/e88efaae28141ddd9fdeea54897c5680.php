@@ -182,6 +182,6 @@ class __TwigTemplate_714f442f20bcfeb6a300d7214b3f6f2a extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
     }
 }

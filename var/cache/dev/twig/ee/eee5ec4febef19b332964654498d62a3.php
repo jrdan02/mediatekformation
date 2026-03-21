@@ -727,6 +727,6 @@ class __TwigTemplate_d56d0877e989ccd43b813b8f9522209f extends Template
     });
 })();
 </script>
-", "@WebProfiler/Profiler/settings.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/settings.html.twig");
+", "@WebProfiler/Profiler/settings.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/settings.html.twig");
     }
 }

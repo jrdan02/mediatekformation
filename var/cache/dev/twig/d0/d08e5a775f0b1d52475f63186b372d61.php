@@ -996,6 +996,6 @@ $context["call"], "return", [], "any", false, false, false, 294) === false)) {
         </menu>
     </dialog>
 {% endblock %}
-", "@WebProfiler/Collector/workflow.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/workflow.html.twig");
+", "@WebProfiler/Collector/workflow.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/web-profiler-bundle/Resources/views/Collector/workflow.html.twig");
     }
 }

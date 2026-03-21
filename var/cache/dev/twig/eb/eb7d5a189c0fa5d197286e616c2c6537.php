@@ -238,7 +238,7 @@ class __TwigTemplate_d38c7aa137971320fd403588ad633c34 extends Template
                 yield "                            <a href=\"";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "id", [], "any", false, false, false, 79)]), "html", null, true);
                 yield "\">
-                                <img src=\"";
+                                <img alt= \"image nimature \" src=\"";
                 // line 80
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 80), "html", null, true);
                 yield "\">
@@ -292,7 +292,7 @@ class __TwigTemplate_d38c7aa137971320fd403588ad633c34 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"basefront.html.twig\" %}
+        return new Source("    {% extends \"basefront.html.twig\" %}
 {% block body %}
     <table class=\"table table-striped\">
         <thead>
@@ -371,7 +371,7 @@ class __TwigTemplate_d38c7aa137971320fd403588ad633c34 extends Template
                     <td class=\"text-center\">
                         {% if formation.miniature %}
                             <a href=\"{{ path('formations.showone', {id:formation.id}) }}\">
-                                <img src=\"{{ formation.miniature }}\">
+                                <img alt= \"image nimature \" src=\"{{ formation.miniature }}\">
                             </a>
                         {% endif %}
                     </td>
@@ -379,6 +379,6 @@ class __TwigTemplate_d38c7aa137971320fd403588ad633c34 extends Template
             {% endfor %}
         </tbody>
     </table>
-{% endblock %}", "pages/formations.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/pages/formations.html.twig");
+{% endblock %}", "pages/formations.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/pages/formations.html.twig");
     }
 }

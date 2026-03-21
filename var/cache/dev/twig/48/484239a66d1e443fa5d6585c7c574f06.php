@@ -451,6 +451,6 @@ class __TwigTemplate_1c56a1bdc1d097f45821824999256aaf extends Template
     {%- set widget_class = widget_class|default('mr-2') -%}
     {{- parent() -}}
 {%- endblock radio_widget -%}
-", "tailwind_2_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
+", "tailwind_2_layout.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
     }
 }

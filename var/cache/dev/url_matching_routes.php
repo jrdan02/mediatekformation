@@ -18,6 +18,8 @@ return [
         '/cgu' => [[['_route' => 'cgu', '_controller' => 'App\\Controller\\AccueilController::cgu'], null, null, null, false, false, null]],
         '/formations' => [[['_route' => 'formations', '_controller' => 'App\\Controller\\FormationsController::index'], null, null, null, false, false, null]],
         '/playlists' => [[['_route' => 'playlists', '_controller' => 'App\\Controller\\PlaylistsController::index'], null, null, null, false, false, null]],
+        '/admin/formation' => [[['_route' => 'admin.formation', '_controller' => 'App\\Controller\\admin\\AdminformationController::index'], null, null, null, false, false, null]],
+        '/admin/formation/add' => [[['_route' => 'admin.formation.add', '_controller' => 'App\\Controller\\admin\\AdminformationController::ajouterformation'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -49,6 +51,16 @@ return [
                     .'|recherche/([^/]++)(?:/([^/]++))?(*:402)'
                     .'|playlist/([^/]++)(*:427)'
                 .')'
+                .'|/admin/formation(?'
+                    .'|/(?'
+                        .'|index/(?'
+                            .'|tri/([^/]++)/([^/]++)(?:/([^/]++))?(*:503)'
+                            .'|recherche/([^/]++)(?:/([^/]++))?(*:543)'
+                        .')'
+                        .'|edit/([^/]++)(*:565)'
+                    .')'
+                    .'|\\.suppr/([^/]++)(*:590)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -65,8 +77,12 @@ return [
         318 => [[['_route' => 'formations.showone', '_controller' => 'App\\Controller\\FormationsController::showOne'], ['id'], null, null, false, true, null]],
         362 => [[['_route' => 'playlists.sort', '_controller' => 'App\\Controller\\PlaylistsController::sort'], ['champ', 'ordre'], null, null, false, true, null]],
         402 => [[['_route' => 'playlists.findallcontain', 'table' => '', '_controller' => 'App\\Controller\\PlaylistsController::findAllContain'], ['champ', 'table'], null, null, false, true, null]],
-        427 => [
-            [['_route' => 'playlists.showone', '_controller' => 'App\\Controller\\PlaylistsController::showOne'], ['id'], null, null, false, true, null],
+        427 => [[['_route' => 'playlists.showone', '_controller' => 'App\\Controller\\PlaylistsController::showOne'], ['id'], null, null, false, true, null]],
+        503 => [[['_route' => 'admin.formation.sort', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminformationController::sort'], ['champ', 'ordre', 'table'], null, null, false, true, null]],
+        543 => [[['_route' => 'admin.formation.findAllContain', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminformationController::findAllContain'], ['champ', 'table'], null, null, false, true, null]],
+        565 => [[['_route' => 'admin.formation.edit', '_controller' => 'App\\Controller\\admin\\AdminformationController::edit'], ['id'], null, null, false, true, null]],
+        590 => [
+            [['_route' => 'admin.formation.suppr', '_controller' => 'App\\Controller\\admin\\AdminformationController::delete'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

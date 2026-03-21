@@ -68,7 +68,7 @@ class FormationRepository extends ServiceEntityRepository
                     ->orderBy('f.publishedAt', 'DESC')
                     ->setParameter('valeur', '%'.$valeur.'%')
                     ->getQuery()
-                    ->getResult();            
+                    ->getResult();
         }else{
             return $this->createQueryBuilder('f')
                     ->join('f.'.$table, 't')                    
@@ -76,9 +76,9 @@ class FormationRepository extends ServiceEntityRepository
                     ->orderBy('f.publishedAt', 'DESC')
                     ->setParameter('valeur', '%'.$valeur.'%')
                     ->getQuery()
-                    ->getResult();                   
-        }       
-    }    
+                    ->getResult();
+        }
+    }
     
     /**
      * Retourne les n formations les plus récentes
@@ -88,7 +88,7 @@ class FormationRepository extends ServiceEntityRepository
     public function findAllLasted($nb) : array {
         return $this->createQueryBuilder('f')
                 ->orderBy('f.publishedAt', 'DESC')
-                ->setMaxResults($nb)     
+                ->setMaxResults($nb)
                 ->getQuery()
                 ->getResult();
     }    

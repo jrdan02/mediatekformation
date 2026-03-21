@@ -18,7 +18,7 @@ class Playlist
 
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $name = null;
-
+    
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
