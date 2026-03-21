@@ -13,6 +13,8 @@
             <strong>description :</strong><br />
                 {{ playlist.description|nl2br }}
         </div>
+        <br>
+        <strong> Nb formation{{playlist.formations|length}}<strong>
         <div class="col">
             <!-- boucle sur l'affichage des formations -->
             {% for formation in playlistformations %}

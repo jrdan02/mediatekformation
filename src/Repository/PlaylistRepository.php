@@ -40,8 +40,27 @@ class PlaylistRepository extends ServiceEntityRepository
                 ->groupBy('p.id')
                 ->orderBy('p.name', $ordre)
                 ->getQuery()
-                ->getResult();       
+                ->getResult();
     } 
+
+     
+     /**
+      * findAllOrderByNbFormation
+      *
+      * @param  mixed $ordre
+      * @return array
+      */
+     public function findAllOrderByNbFormation($ordre): array{
+        return $this->createQueryBuilder('p')
+            ->leftjoin('p.formations', 'f')
+            ->groupBy('p.id')
+            ->orderBy('COUNT(f.id)', $ordre)
+            ->getQuery()
+             ->getResult();
+            
+            
+
+    }
 	
     /**
      * Enregistrements dont un champ contient une valeur
@@ -73,8 +92,8 @@ class PlaylistRepository extends ServiceEntityRepository
                     ->groupBy('p.id')
                     ->orderBy('p.name', 'ASC')
                     ->getQuery()
-                    ->getResult();              
-        }           
-    }    
+                    ->getResult();
+        }
+    }
     
 }

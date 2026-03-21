@@ -52,7 +52,7 @@ class PlaylistsController extends AbstractController {
         $categories = $this->categorieRepository->findAll();
         return $this->render("pages/playlists.html.twig", [
             'playlists' => $playlists,
-            'categories' => $categories            
+            'categories' => $categories
         ]);
     }
 
@@ -62,14 +62,20 @@ class PlaylistsController extends AbstractController {
             case "name":
                 $playlists = $this->playlistRepository->findAllOrderByName($ordre);
                 break;
+            case "nbformations":
+             $playlists = $this->playlistRepository->findAllOrderByNbFormation($ordre);
+                break;
+            default:
+                $playlists=$this->playlistRepository->find('ASC');
+                break;
+
         }
         $categories = $this->categorieRepository->findAll();
         return $this->render("pages/playlists.html.twig", [
             'playlists' => $playlists,
-            'categories' => $categories            
+            'categories' => $categories
         ]);
-    }          
-
+    } 
     #[Route('/playlists/recherche/{champ}/{table}', name: 'playlists.findallcontain')]
     public function findAllContain($champ, Request $request, $table=""): Response{
         $valeur = $request->get("recherche");
@@ -77,7 +83,7 @@ class PlaylistsController extends AbstractController {
         $categories = $this->categorieRepository->findAll();
         return $this->render("pages/playlists.html.twig", [
             'playlists' => $playlists,
-            'categories' => $categories,            
+            'categories' => $categories,
             'valeur' => $valeur,
             'table' => $table
         ]);

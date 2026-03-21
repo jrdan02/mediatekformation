@@ -16,6 +16,7 @@
                         </div>
                     </form>                    
                 </th>
+
                 <th class="text-left align-top" scope="col">
                     catégories
                     <form class="form-inline mt-1" method="POST" action="{{ path('playlists.findallcontain', {champ:'id', table:'categories'}) }}">
@@ -32,6 +33,11 @@
                         </select>                    
                     </form>            
                 </th>
+                 <th class="text-left align-top" scope="col">
+                Nb Formations<br />
+                <button onclick="location.href='{{ path('playlists.sort', {champ: 'nbformations', ordre:'ASC'}) }}'" class="btn btn-info btn-sm" aria-label="Sort by number of formations ascending">↑</button>
+                <button onclick="location.href='{{ path('playlists.sort', {champ:'nbformations', ordre:'DESC'}) }}'" class="btn btn-info btn-sm" aria-label="Sort by number of formations descending">↓</button>
+            </th>
                 <th class="text-center align-top" scope="col">
                     &nbsp;
                 </th>				
@@ -54,10 +60,16 @@
                                     &nbsp;{{ categories[c] }}                                  
                                 {% endfor %}
                             {% endif %}
-                        </td>            					
+                        </td>
+                         <td class="text-center">
+                                {{playlists[k].formations|length}}
+                         </td> 
+                                     					
                         <td class="text-center">
                             <a href="{{ path('playlists.showone', {id:playlists[k].id}) }}" class="btn btn-secondary">Voir détail</a>
-                        </td> 					
+                        </td> 
+                       
+                        					
                     </tr>
                 {% endfor %}	
             {% endif %}
