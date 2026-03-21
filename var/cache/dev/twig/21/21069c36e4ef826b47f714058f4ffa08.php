@@ -99,35 +99,36 @@ class __TwigTemplate_a7b5aeacba024cd33e71746ae92652c4 extends Template
                         </div>
                     </form>                    
                 </th>
+
                 <th class=\"text-left align-top\" scope=\"col\">
                     catégories
                     <form class=\"form-inline mt-1\" method=\"POST\" action=\"";
-        // line 21
+        // line 22
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("playlists.findallcontain", ["champ" => "id", "table" => "categories"]), "html", null, true);
         yield "\">
                         <select class=\"form-select form-select-sm\" name=\"recherche\" id=\"recherche\" onchange=\"this.form.submit()\">
                             <option value=\"\"></option>
                             ";
-        // line 24
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 25, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["categorie"]) {
-            // line 25
+            // line 26
             yield "                                <option 
                                     ";
-            // line 26
-            if ((((array_key_exists("valeur", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["valeur"]) || array_key_exists("valeur", $context) ? $context["valeur"] : (function () { throw new RuntimeError('Variable "valeur" does not exist.', 26, $this->source); })()))) : ("")) && ((isset($context["valeur"]) || array_key_exists("valeur", $context) ? $context["valeur"] : (function () { throw new RuntimeError('Variable "valeur" does not exist.', 26, $this->source); })()) == CoreExtension::getAttribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 26)))) {
+            // line 27
+            if ((((array_key_exists("valeur", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["valeur"]) || array_key_exists("valeur", $context) ? $context["valeur"] : (function () { throw new RuntimeError('Variable "valeur" does not exist.', 27, $this->source); })()))) : ("")) && ((isset($context["valeur"]) || array_key_exists("valeur", $context) ? $context["valeur"] : (function () { throw new RuntimeError('Variable "valeur" does not exist.', 27, $this->source); })()) == CoreExtension::getAttribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 27)))) {
                 yield " 
                                         selected
                                     ";
             }
-            // line 28
+            // line 29
             yield " 
                                     value=\"";
-            // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 29), "html", null, true);
+            // line 30
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["categorie"], "id", [], "any", false, false, false, 30), "html", null, true);
             yield "\">";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["categorie"], "name", [], "any", false, false, false, 29), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["categorie"], "name", [], "any", false, false, false, 30), "html", null, true);
             yield "
                                 </option>
                             ";
@@ -135,10 +136,21 @@ class __TwigTemplate_a7b5aeacba024cd33e71746ae92652c4 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['categorie'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 33
         yield "                        </select>                    
                     </form>            
                 </th>
+                 <th class=\"text-left align-top\" scope=\"col\">
+                Nb Formations<br />
+                <button onclick=\"location.href='";
+        // line 38
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("playlists.sort", ["champ" => "nbformations", "ordre" => "ASC"]), "html", null, true);
+        yield "'\" class=\"btn btn-info btn-sm\" aria-label=\"Sort by number of formations ascending\">↑</button>
+                <button onclick=\"location.href='";
+        // line 39
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("playlists.sort", ["champ" => "nbformations", "ordre" => "DESC"]), "html", null, true);
+        yield "'\" class=\"btn btn-info btn-sm\" aria-label=\"Sort by number of formations descending\">↓</button>
+            </th>
                 <th class=\"text-center align-top\" scope=\"col\">
                     &nbsp;
                 </th>\t\t\t\t
@@ -147,66 +159,75 @@ class __TwigTemplate_a7b5aeacba024cd33e71746ae92652c4 extends Template
         <tbody>
             <!-- boucle sur les playlists -->
             ";
-        // line 42
-        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 42, $this->source); })())) > 0)) {
-            // line 43
+        // line 48
+        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 48, $this->source); })())) > 0)) {
+            // line 49
             yield "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(range(0, (Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 43, $this->source); })())) - 1)));
+            $context['_seq'] = CoreExtension::ensureTraversable(range(0, (Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 49, $this->source); })())) - 1)));
             foreach ($context['_seq'] as $context["_key"] => $context["k"]) {
-                // line 44
+                // line 50
                 yield "                    <tr class=\"align-middle\">
                         <td>
                             <h5 class=\"text-info\">
                                 ";
-                // line 47
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 47, $this->source); })()), $context["k"], [], "array", false, false, false, 47), "name", [], "any", false, false, false, 47), "html", null, true);
+                // line 53
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 53, $this->source); })()), $context["k"], [], "array", false, false, false, 53), "name", [], "any", false, false, false, 53), "html", null, true);
                 yield "
                             </h5>
                         </td>                 
                         <td class=\"text-left\">
                             ";
-                // line 51
-                $context["categories"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 51, $this->source); })()), $context["k"], [], "array", false, false, false, 51), "categoriesplaylist", [], "any", false, false, false, 51);
-                // line 52
+                // line 57
+                $context["categories"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 57, $this->source); })()), $context["k"], [], "array", false, false, false, 57), "categoriesplaylist", [], "any", false, false, false, 57);
+                // line 58
                 yield "                            ";
-                if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 52, $this->source); })())) > 0)) {
-                    // line 53
+                if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 58, $this->source); })())) > 0)) {
+                    // line 59
                     yield "                                ";
                     $context['_parent'] = $context;
-                    $context['_seq'] = CoreExtension::ensureTraversable(range(0, (Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 53, $this->source); })())) - 1)));
+                    $context['_seq'] = CoreExtension::ensureTraversable(range(0, (Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 59, $this->source); })())) - 1)));
                     foreach ($context['_seq'] as $context["_key"] => $context["c"]) {
-                        // line 54
+                        // line 60
                         yield "                                    &nbsp;";
-                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 54, $this->source); })()), $context["c"], [], "array", false, false, false, 54), "html", null, true);
+                        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 60, $this->source); })()), $context["c"], [], "array", false, false, false, 60), "html", null, true);
                         yield "                                  
                                 ";
                     }
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['c'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 56
+                    // line 62
                     yield "                            ";
                 }
-                // line 57
-                yield "                        </td>            \t\t\t\t\t
+                // line 63
+                yield "                        </td>
+                         <td class=\"text-center\">
+                                ";
+                // line 65
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 65, $this->source); })()), $context["k"], [], "array", false, false, false, 65), "formations", [], "any", false, false, false, 65)), "html", null, true);
+                yield "
+                         </td> 
+                                     \t\t\t\t\t
                         <td class=\"text-center\">
                             <a href=\"";
-                // line 59
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("playlists.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 59, $this->source); })()), $context["k"], [], "array", false, false, false, 59), "id", [], "any", false, false, false, 59)]), "html", null, true);
+                // line 69
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("playlists.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlists"]) || array_key_exists("playlists", $context) ? $context["playlists"] : (function () { throw new RuntimeError('Variable "playlists" does not exist.', 69, $this->source); })()), $context["k"], [], "array", false, false, false, 69), "id", [], "any", false, false, false, 69)]), "html", null, true);
                 yield "\" class=\"btn btn-secondary\">Voir détail</a>
-                        </td> \t\t\t\t\t
+                        </td> 
+                       
+                        \t\t\t\t\t
                     </tr>
                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['k'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 62
+            // line 74
             yield "\t
             ";
         }
-        // line 64
+        // line 76
         yield "        </tbody>
     </table>
 ";
@@ -240,7 +261,7 @@ class __TwigTemplate_a7b5aeacba024cd33e71746ae92652c4 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  210 => 64,  206 => 62,  196 => 59,  192 => 57,  189 => 56,  180 => 54,  175 => 53,  172 => 52,  170 => 51,  163 => 47,  158 => 44,  153 => 43,  151 => 42,  139 => 32,  128 => 29,  125 => 28,  119 => 26,  116 => 25,  112 => 24,  106 => 21,  96 => 14,  90 => 13,  84 => 10,  80 => 9,  76 => 8,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  231 => 76,  227 => 74,  215 => 69,  208 => 65,  204 => 63,  201 => 62,  192 => 60,  187 => 59,  184 => 58,  182 => 57,  175 => 53,  170 => 50,  165 => 49,  163 => 48,  151 => 39,  147 => 38,  140 => 33,  129 => 30,  126 => 29,  120 => 27,  117 => 26,  113 => 25,  107 => 22,  96 => 14,  90 => 13,  84 => 10,  80 => 9,  76 => 8,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -263,6 +284,7 @@ class __TwigTemplate_a7b5aeacba024cd33e71746ae92652c4 extends Template
                         </div>
                     </form>                    
                 </th>
+
                 <th class=\"text-left align-top\" scope=\"col\">
                     catégories
                     <form class=\"form-inline mt-1\" method=\"POST\" action=\"{{ path('playlists.findallcontain', {champ:'id', table:'categories'}) }}\">
@@ -279,6 +301,11 @@ class __TwigTemplate_a7b5aeacba024cd33e71746ae92652c4 extends Template
                         </select>                    
                     </form>            
                 </th>
+                 <th class=\"text-left align-top\" scope=\"col\">
+                Nb Formations<br />
+                <button onclick=\"location.href='{{ path('playlists.sort', {champ: 'nbformations', ordre:'ASC'}) }}'\" class=\"btn btn-info btn-sm\" aria-label=\"Sort by number of formations ascending\">↑</button>
+                <button onclick=\"location.href='{{ path('playlists.sort', {champ:'nbformations', ordre:'DESC'}) }}'\" class=\"btn btn-info btn-sm\" aria-label=\"Sort by number of formations descending\">↓</button>
+            </th>
                 <th class=\"text-center align-top\" scope=\"col\">
                     &nbsp;
                 </th>\t\t\t\t
@@ -301,16 +328,22 @@ class __TwigTemplate_a7b5aeacba024cd33e71746ae92652c4 extends Template
                                     &nbsp;{{ categories[c] }}                                  
                                 {% endfor %}
                             {% endif %}
-                        </td>            \t\t\t\t\t
+                        </td>
+                         <td class=\"text-center\">
+                                {{playlists[k].formations|length}}
+                         </td> 
+                                     \t\t\t\t\t
                         <td class=\"text-center\">
                             <a href=\"{{ path('playlists.showone', {id:playlists[k].id}) }}\" class=\"btn btn-secondary\">Voir détail</a>
-                        </td> \t\t\t\t\t
+                        </td> 
+                       
+                        \t\t\t\t\t
                     </tr>
                 {% endfor %}\t
             {% endif %}
         </tbody>
     </table>
 {% endblock %}
-", "pages/playlists.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/pages/playlists.html.twig");
+", "pages/playlists.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/pages/playlists.html.twig");
     }
 }

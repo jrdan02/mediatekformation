@@ -112,7 +112,7 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
         yield "    <div class=\"container\">
         <!-- titre -->
         <div class=\"text-left\">
-            <img src=\"";
+            <img alt=\"banniere\"src=\"";
         // line 9
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "request", [], "any", false, false, false, 9), "getBasePath", [], "method", false, false, false, 9) . "/banniere.jpg"), "html", null, true);
         yield "\" >
@@ -258,7 +258,7 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
     <div class=\"container\">
         <!-- titre -->
         <div class=\"text-left\">
-            <img src=\"{{ app.request.getBasePath()~'/banniere.jpg' }}\" >
+            <img alt=\"banniere\"src=\"{{ app.request.getBasePath()~'/banniere.jpg' }}\" >
         </div>
         <!-- menu -->
         <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">
@@ -290,6 +290,6 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
         </footer>
     </div>
 {% endblock %}
-{% block javascripts %}{% endblock %}", "basefront.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/basefront.html.twig");
+{% block javascripts %}{% endblock %}", "basefront.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/basefront.html.twig");
     }
 }

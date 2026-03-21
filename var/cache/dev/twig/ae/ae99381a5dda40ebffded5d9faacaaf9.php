@@ -99,42 +99,47 @@ class __TwigTemplate_b6a816b7ad854e760764b92433734062 extends Template
         yield Twig\Extension\CoreExtension::nl2br($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlist"]) || array_key_exists("playlist", $context) ? $context["playlist"] : (function () { throw new RuntimeError('Variable "playlist" does not exist.', 14, $this->source); })()), "description", [], "any", false, false, false, 14), "html", null, true));
         yield "
         </div>
+        <br>
+        <strong> Nb formation";
+        // line 17
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, (isset($context["playlist"]) || array_key_exists("playlist", $context) ? $context["playlist"] : (function () { throw new RuntimeError('Variable "playlist" does not exist.', 17, $this->source); })()), "formations", [], "any", false, false, false, 17)), "html", null, true);
+        yield "<strong>
         <div class=\"col\">
             <!-- boucle sur l'affichage des formations -->
             ";
-        // line 18
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["playlistformations"]) || array_key_exists("playlistformations", $context) ? $context["playlistformations"] : (function () { throw new RuntimeError('Variable "playlistformations" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["playlistformations"]) || array_key_exists("playlistformations", $context) ? $context["playlistformations"] : (function () { throw new RuntimeError('Variable "playlistformations" does not exist.', 20, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["formation"]) {
-            // line 19
+            // line 21
             yield "                <div class=\"row mt-1\">
                     <div class=\"col-md-auto\">
                         ";
-            // line 21
-            if (CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 21)) {
-                // line 22
+            // line 23
+            if (CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 23)) {
+                // line 24
                 yield "                            <a href=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "id", [], "any", false, false, false, 22)]), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "id", [], "any", false, false, false, 24)]), "html", null, true);
                 yield "\">
-                                <img src=\"";
-                // line 23
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 23), "html", null, true);
+                                <img alt= \"image nimature\"src=\"";
+                // line 25
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 25), "html", null, true);
                 yield "\">
                             </a>
                         ";
             }
-            // line 25
+            // line 27
             yield "  
                     </div>
                     <div class=\"col d-flex align-items-center\">
                         <a href=\"";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            // line 30
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "id", [], "any", false, false, false, 30)]), "html", null, true);
             yield "\" 
                            class=\"link-secondary text-decoration-none\">
                             ";
-            // line 30
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "title", [], "any", false, false, false, 30), "html", null, true);
+            // line 32
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "title", [], "any", false, false, false, 32), "html", null, true);
             yield "
                         </a>          
                     </div>
@@ -144,7 +149,7 @@ class __TwigTemplate_b6a816b7ad854e760764b92433734062 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 37
         yield "        </div>
         
     </div>
@@ -179,7 +184,7 @@ class __TwigTemplate_b6a816b7ad854e760764b92433734062 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  148 => 35,  137 => 30,  132 => 28,  127 => 25,  121 => 23,  116 => 22,  114 => 21,  110 => 19,  106 => 18,  99 => 14,  95 => 12,  86 => 10,  81 => 9,  79 => 8,  73 => 5,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  153 => 37,  142 => 32,  137 => 30,  132 => 27,  126 => 25,  121 => 24,  119 => 23,  115 => 21,  111 => 20,  105 => 17,  99 => 14,  95 => 12,  86 => 10,  81 => 9,  79 => 8,  73 => 5,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -199,6 +204,8 @@ class __TwigTemplate_b6a816b7ad854e760764b92433734062 extends Template
             <strong>description :</strong><br />
                 {{ playlist.description|nl2br }}
         </div>
+        <br>
+        <strong> Nb formation{{playlist.formations|length}}<strong>
         <div class=\"col\">
             <!-- boucle sur l'affichage des formations -->
             {% for formation in playlistformations %}
@@ -206,7 +213,7 @@ class __TwigTemplate_b6a816b7ad854e760764b92433734062 extends Template
                     <div class=\"col-md-auto\">
                         {% if formation.miniature %}
                             <a href=\"{{ path('formations.showone', {id:formation.id}) }}\">
-                                <img src=\"{{ formation.miniature }}\">
+                                <img alt= \"image nimature\"src=\"{{ formation.miniature }}\">
                             </a>
                         {% endif %}  
                     </div>
@@ -222,6 +229,6 @@ class __TwigTemplate_b6a816b7ad854e760764b92433734062 extends Template
         
     </div>
 {% endblock %}
-", "pages/playlist.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/pages/playlist.html.twig");
+", "pages/playlist.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/pages/playlist.html.twig");
     }
 }
