@@ -14,7 +14,7 @@
                    <input type="text" name="recherche" value="{% if table|default == '' %}{{ valeur|default('') }}{% endif %}">
                     <input type="hidden" name="champ" value="title">
                     <input type="hidden" name="table" value="">
-                    <input type="hidden" name="_token" value="{{ csrf_token('filter_titre') }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token('filtre_title') }}">
                     <button type="submit" class="btn btn-info mb-2 btn-sm">Filtrer</button>
                 </div>
             </form>
@@ -50,7 +50,7 @@
                         </option>
                     {% endfor %}
                 </select>
-                <input type="hidden" name="table" value="categories">
+                <input type="hidden" name="_token" value="{{ csrf_token('filtre_name') }}">
             </form>
         </th>
         <th class="text-center align-top" scope="col">

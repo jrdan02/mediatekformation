@@ -141,7 +141,23 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
                     </li>                    
                 </ul>
             </div>
-        </nav>        
+              ";
+        // line 26
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26)) {
+            // line 27
+            yield "                <a class=\"btn btn-secondary\" href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+            yield "\">Déconnexion</a>
+                 ";
+        } else {
+            // line 29
+            yield "                <a class=\"btn btn-primary\" href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            yield "\">Connexion</a>
+            ";
+        }
+        // line 31
+        yield "        </nav>        
     </div>
 ";
         
@@ -153,7 +169,7 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
         return; yield '';
     }
 
-    // line 29
+    // line 34
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -172,7 +188,7 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
         return; yield '';
     }
 
-    // line 30
+    // line 35
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -182,13 +198,13 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 31
+        // line 36
         yield "    <div class=\"container text-center\">
         <footer>
             <hr>
             <p><small><i>
                 Consultez nos <a class=\"link-secondary\" href=\"";
-        // line 35
+        // line 40
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cgu");
         yield "\">Conditions Générales d'Utilisation</a>
             </i></small></p>
@@ -205,7 +221,7 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
         return; yield '';
     }
 
-    // line 41
+    // line 46
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -245,7 +261,7 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  209 => 41,  192 => 35,  186 => 31,  176 => 30,  157 => 29,  139 => 22,  133 => 19,  127 => 16,  117 => 9,  112 => 6,  102 => 5,  83 => 4,  64 => 3,  41 => 1,);
+        return array (  225 => 46,  208 => 40,  202 => 36,  192 => 35,  173 => 34,  160 => 31,  154 => 29,  148 => 27,  146 => 26,  139 => 22,  133 => 19,  127 => 16,  117 => 9,  112 => 6,  102 => 5,  83 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -275,6 +291,11 @@ class __TwigTemplate_162e776ca8fe7a5c09b90184e33026c5 extends Template
                     </li>                    
                 </ul>
             </div>
+              {% if app.user %}
+                <a class=\"btn btn-secondary\" href=\"{{ path('logout') }}\">Déconnexion</a>
+                 {% else %}
+                <a class=\"btn btn-primary\" href=\"{{ path('app_login') }}\">Connexion</a>
+            {% endif %}
         </nav>        
     </div>
 {% endblock %}

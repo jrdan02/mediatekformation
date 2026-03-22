@@ -23,6 +23,11 @@
                     </li>                    
                 </ul>
             </div>
+              {% if app.user %}
+                <a class="btn btn-secondary" href="{{ path('logout') }}">Déconnexion</a>
+                 {% else %}
+                <a class="btn btn-primary" href="{{ path('app_login') }}">Connexion</a>
+            {% endif %}
         </nav>        
     </div>
 {% endblock %}

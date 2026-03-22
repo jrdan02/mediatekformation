@@ -95,7 +95,7 @@ class __TwigTemplate_1732bc73ce3caa6e0787d25445bf9bb7 extends Template
                     <input type=\"hidden\" name=\"table\" value=\"\">
                     <input type=\"hidden\" name=\"_token\" value=\"";
         // line 17
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("filter_titre"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("filtre_title"), "html", null, true);
         yield "\">
                     <button type=\"submit\" class=\"btn btn-info mb-2 btn-sm\">Filtrer</button>
                 </div>
@@ -171,7 +171,10 @@ class __TwigTemplate_1732bc73ce3caa6e0787d25445bf9bb7 extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 52
         yield "                </select>
-                <input type=\"hidden\" name=\"table\" value=\"categories\">
+                <input type=\"hidden\" name=\"_token\" value=\"";
+        // line 53
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("filtre_name"), "html", null, true);
+        yield "\">
             </form>
         </th>
         <th class=\"text-center align-top\" scope=\"col\">
@@ -305,7 +308,7 @@ class __TwigTemplate_1732bc73ce3caa6e0787d25445bf9bb7 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  274 => 99,  259 => 90,  253 => 87,  246 => 83,  242 => 82,  238 => 80,  231 => 78,  223 => 76,  218 => 75,  213 => 73,  209 => 72,  205 => 71,  201 => 69,  197 => 68,  187 => 61,  181 => 58,  173 => 52,  161 => 49,  157 => 48,  154 => 47,  150 => 46,  144 => 43,  132 => 34,  124 => 31,  118 => 28,  114 => 27,  110 => 26,  98 => 17,  90 => 14,  85 => 12,  81 => 11,  77 => 10,  69 => 4,  59 => 3,  36 => 2,);
+        return array (  277 => 99,  262 => 90,  256 => 87,  249 => 83,  245 => 82,  241 => 80,  234 => 78,  226 => 76,  221 => 75,  216 => 73,  212 => 72,  208 => 71,  204 => 69,  200 => 68,  190 => 61,  184 => 58,  176 => 53,  173 => 52,  161 => 49,  157 => 48,  154 => 47,  150 => 46,  144 => 43,  132 => 34,  124 => 31,  118 => 28,  114 => 27,  110 => 26,  98 => 17,  90 => 14,  85 => 12,  81 => 11,  77 => 10,  69 => 4,  59 => 3,  36 => 2,);
     }
 
     public function getSourceContext()
@@ -326,7 +329,7 @@ class __TwigTemplate_1732bc73ce3caa6e0787d25445bf9bb7 extends Template
                    <input type=\"text\" name=\"recherche\" value=\"{% if table|default == '' %}{{ valeur|default('') }}{% endif %}\">
                     <input type=\"hidden\" name=\"champ\" value=\"title\">
                     <input type=\"hidden\" name=\"table\" value=\"\">
-                    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('filter_titre') }}\">
+                    <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('filtre_title') }}\">
                     <button type=\"submit\" class=\"btn btn-info mb-2 btn-sm\">Filtrer</button>
                 </div>
             </form>
@@ -362,7 +365,7 @@ class __TwigTemplate_1732bc73ce3caa6e0787d25445bf9bb7 extends Template
                         </option>
                     {% endfor %}
                 </select>
-                <input type=\"hidden\" name=\"table\" value=\"categories\">
+                <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('filtre_name') }}\">
             </form>
         </th>
         <th class=\"text-center align-top\" scope=\"col\">

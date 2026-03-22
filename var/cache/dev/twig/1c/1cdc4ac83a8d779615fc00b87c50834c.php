@@ -54,11 +54,11 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
         // line 6
         yield from $this->unwrap()->yieldBlock('top', $context, $blocks);
-        // line 36
+        // line 37
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         yield "  
 ";
-        // line 37
+        // line 38
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
         yield "   ";
         
@@ -159,12 +159,14 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.categories");
         yield "\">Categories</a>
                     </li>
-                </ul>
-                
+                </ul>  
+                </div>
+                <a class=\"btn btn-secondary\" href=\"";
+        // line 29
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
+        yield "\">Déconnexion</a>
+             
             </div>
-              ";
-        // line 30
-        yield "   
         </nav>
        
         
@@ -179,7 +181,7 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
         return; yield '';
     }
 
-    // line 36
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -198,7 +200,7 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
         return; yield '';
     }
 
-    // line 37
+    // line 38
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -230,7 +232,7 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  202 => 37,  183 => 36,  167 => 30,  159 => 25,  153 => 22,  147 => 19,  141 => 15,  136 => 12,  134 => 11,  128 => 8,  125 => 7,  115 => 6,  103 => 4,  93 => 3,  74 => 2,  62 => 37,  58 => 36,  56 => 6,  54 => 3,  52 => 2,  49 => 1,);
+        return array (  204 => 38,  185 => 37,  166 => 29,  159 => 25,  153 => 22,  147 => 19,  141 => 15,  136 => 12,  134 => 11,  128 => 8,  125 => 7,  115 => 6,  103 => 4,  93 => 3,  74 => 2,  62 => 38,  58 => 37,  56 => 6,  54 => 3,  52 => 2,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -261,10 +263,11 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
                     <li class=\"nav-item\">
                           <a class=\"nav-link\" href=\"{{ path('admin.categories') }}\">Categories</a>
                     </li>
-                </ul>
-                
+                </ul>  
+                </div>
+                <a class=\"btn btn-secondary\" href=\"{{ path('logout') }}\">Déconnexion</a>
+             
             </div>
-              {# <a class=\"btn btn-secondary\" href=\"{{ path('logout') }}\">Déconnexion</a>#}   
         </nav>
        
         
