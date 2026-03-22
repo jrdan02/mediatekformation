@@ -1,5 +1,11 @@
 {% extends "baseadmin.html.twig" %}
 {% block body %}
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endfor %}
+    {% endfor %}
 <table class="table table-striped">
     <thead>
         <tr>

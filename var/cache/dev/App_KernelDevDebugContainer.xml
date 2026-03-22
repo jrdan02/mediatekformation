@@ -377,6 +377,15 @@
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\PlaylistsController"/>
       </call>
     </service>
+    <service id="App\Controller\admin\AdminCategorieController" class="App\Controller\admin\AdminCategorieController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\FormationRepository"/>
+      <argument type="service" id="App\Repository\CategorieRepository"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\admin\AdminCategorieController"/>
+      </call>
+    </service>
     <service id="App\Controller\admin\AdminformationController" class="App\Controller\admin\AdminformationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -441,7 +450,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.23fBZf6"/>
+      <argument type="service" id=".service_locator.F94_5Ek"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3315,7 +3324,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.23fBZf6"/>
+      <argument type="service" id=".service_locator.F94_5Ek"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7019,6 +7028,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PlaylistsController" class="App\Controller\PlaylistsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PlaylistsController" class="App\Controller\PlaylistsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PlaylistsController" class="App\Controller\PlaylistsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\AdminCategorieController" class="App\Controller\admin\AdminCategorieController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\AdminCategorieController" class="App\Controller\admin\AdminCategorieController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\admin\AdminCategorieController" class="App\Controller\admin\AdminCategorieController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\AdminformationController" class="App\Controller\admin\AdminformationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\AdminformationController" class="App\Controller\admin\AdminformationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\admin\AdminformationController" class="App\Controller\admin\AdminformationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7458,20 +7470,28 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.j7wOkYK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="categorie" type="service_closure" id=".errored..service_locator.j7wOkYK.App\Entity\Categorie"/>
+      </argument>
+    </service>
     <service id=".service_locator.j1iESqK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="playlist" type="service_closure" id=".errored..service_locator.j1iESqK.App\Entity\Playlist"/>
       </argument>
     </service>
-    <service id=".service_locator.23fBZf6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.F94_5Ek" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\admin\AdminCategorieController::delete" type="service_closure" id=".service_locator.j7wOkYK"/>
         <argument key="App\Controller\admin\AdminplaylistsController::delete" type="service_closure" id=".service_locator.j1iESqK"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
+        <argument key="App\Controller\admin\AdminCategorieController:delete" type="service_closure" id=".service_locator.j7wOkYK"/>
         <argument key="App\Controller\admin\AdminplaylistsController:delete" type="service_closure" id=".service_locator.j1iESqK"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -8099,6 +8119,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.O2p6Lk7" method="withContext"/>
     </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\admin\AdminCategorieController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\AdminCategorieController"/>
+      <argument>App\Controller\admin\AdminCategorieController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
     <service id=".service_locator.O2p6Lk7.App\Controller\admin\AdminformationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\AdminformationController"/>
       <argument>App\Controller\admin\AdminformationController</argument>
@@ -8287,6 +8313,7 @@
           <argument>App\Controller\AccueilController</argument>
           <argument>App\Controller\FormationsController</argument>
           <argument>App\Controller\PlaylistsController</argument>
+          <argument>App\Controller\admin\AdminCategorieController</argument>
           <argument>App\Controller\admin\AdminformationController</argument>
           <argument>App\Controller\admin\AdminplaylistsController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
@@ -8488,6 +8515,9 @@
     <service id="debug.security.event_dispatcher.main.inner" class="Symfony\Component\EventDispatcher\EventDispatcher"/>
     <service id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.y4_Zrx.&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
+    </service>
+    <service id=".errored..service_locator.j7wOkYK.App\Entity\Categorie" class="App\Entity\Categorie">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.j7wOkYK&quot;: it needs an instance of &quot;App\Entity\Categorie&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.j1iESqK.App\Entity\Playlist" class="App\Entity\Playlist">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.j1iESqK&quot;: it needs an instance of &quot;App\Entity\Playlist&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -9675,7 +9705,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.23fBZf6"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.F94_5Ek"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9699,7 +9729,7 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
-    <service id=".service_locator.devjtzg" alias=".service_locator.23fBZf6"/>
+    <service id=".service_locator.Zu.hJEq" alias=".service_locator.F94_5Ek"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.BT6DWKm" alias=".service_locator.o1.P0VW"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -9725,6 +9755,7 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
+    <service id=".service_locator.2whhcc6" alias=".service_locator.j7wOkYK"/>
     <service id=".service_locator.Ngon8.N" alias=".service_locator.j1iESqK"/>
     <service id=".service_locator.Q1z.f9O" alias=".service_locator.O2p6Lk7"/>
     <service id=".service_locator.dGUCsbe" alias=".service_locator.oR77BOj"/>

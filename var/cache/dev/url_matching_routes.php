@@ -18,6 +18,8 @@ return [
         '/cgu' => [[['_route' => 'cgu', '_controller' => 'App\\Controller\\AccueilController::cgu'], null, null, null, false, false, null]],
         '/formations' => [[['_route' => 'formations', '_controller' => 'App\\Controller\\FormationsController::index'], null, null, null, false, false, null]],
         '/playlists' => [[['_route' => 'playlists', '_controller' => 'App\\Controller\\PlaylistsController::index'], null, null, null, false, false, null]],
+        '/admin/categories' => [[['_route' => 'admin.categories', '_controller' => 'App\\Controller\\admin\\AdminCategorieController::index'], null, null, null, false, false, null]],
+        '/admin/categories/add' => [[['_route' => 'admin.categories.add', '_controller' => 'App\\Controller\\admin\\AdminCategorieController::ajouterCategorie'], null, ['POST' => 0], null, false, false, null]],
         '/admin/formation' => [[['_route' => 'admin.formation', '_controller' => 'App\\Controller\\admin\\AdminformationController::index'], null, null, null, false, false, null]],
         '/admin/formation/add' => [[['_route' => 'admin.formation.add', '_controller' => 'App\\Controller\\admin\\AdminformationController::ajouterformation'], null, null, null, false, false, null]],
         '/admin/playlist' => [[['_route' => 'admin.playlist', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::index'], null, null, null, false, false, null]],
@@ -54,24 +56,25 @@ return [
                     .'|playlist/([^/]++)(*:427)'
                 .')'
                 .'|/admin/(?'
+                    .'|categorie/suppr/([^/]++)(*:470)'
                     .'|formation(?'
                         .'|/(?'
                             .'|index/(?'
-                                .'|tri/([^/]++)/([^/]++)(?:/([^/]++))?(*:506)'
-                                .'|recherche/([^/]++)(?:/([^/]++))?(*:546)'
+                                .'|tri/([^/]++)/([^/]++)(?:/([^/]++))?(*:538)'
+                                .'|recherche/([^/]++)(?:/([^/]++))?(*:578)'
                             .')'
-                            .'|edit/([^/]++)(*:568)'
+                            .'|edit/([^/]++)(*:600)'
                         .')'
-                        .'|\\.suppr/([^/]++)(*:593)'
+                        .'|\\.suppr/([^/]++)(*:625)'
                     .')'
                     .'|playlist(?'
                         .'|s/index/(?'
-                            .'|tri/([^/]++)/([^/]++)(?:/([^/]++))?(*:659)'
-                            .'|recherche/([^/]++)(?:/([^/]++))?(*:699)'
+                            .'|tri/([^/]++)/([^/]++)(?:/([^/]++))?(*:691)'
+                            .'|recherche/([^/]++)(?:/([^/]++))?(*:731)'
                         .')'
                         .'|/(?'
-                            .'|edit/([^/]++)(*:725)'
-                            .'|suppr/([^/]++)(*:747)'
+                            .'|edit/([^/]++)(*:757)'
+                            .'|suppr/([^/]++)(*:779)'
                         .')'
                     .')'
                 .')'
@@ -92,14 +95,15 @@ return [
         362 => [[['_route' => 'playlists.sort', '_controller' => 'App\\Controller\\PlaylistsController::sort'], ['champ', 'ordre'], null, null, false, true, null]],
         402 => [[['_route' => 'playlists.findallcontain', 'table' => '', '_controller' => 'App\\Controller\\PlaylistsController::findAllContain'], ['champ', 'table'], null, null, false, true, null]],
         427 => [[['_route' => 'playlists.showone', '_controller' => 'App\\Controller\\PlaylistsController::showOne'], ['id'], null, null, false, true, null]],
-        506 => [[['_route' => 'admin.formation.sort', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminformationController::sort'], ['champ', 'ordre', 'table'], null, null, false, true, null]],
-        546 => [[['_route' => 'admin.formation.findAllContain', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminformationController::findAllContain'], ['champ', 'table'], null, null, false, true, null]],
-        568 => [[['_route' => 'admin.formation.edit', '_controller' => 'App\\Controller\\admin\\AdminformationController::edit'], ['id'], null, null, false, true, null]],
-        593 => [[['_route' => 'admin.formation.suppr', '_controller' => 'App\\Controller\\admin\\AdminformationController::delete'], ['id'], null, null, false, true, null]],
-        659 => [[['_route' => 'admin.playlist.sort', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::sort'], ['champ', 'ordre', 'table'], null, null, false, true, null]],
-        699 => [[['_route' => 'admin.playlists.findallcontain', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::findAllContain'], ['champ', 'table'], null, null, false, true, null]],
-        725 => [[['_route' => 'admin.playlist.edit', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::edit'], ['id'], null, null, false, true, null]],
-        747 => [
+        470 => [[['_route' => 'admin.categorie.suppr', '_controller' => 'App\\Controller\\admin\\AdminCategorieController::delete'], ['id'], null, null, false, true, null]],
+        538 => [[['_route' => 'admin.formation.sort', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminformationController::sort'], ['champ', 'ordre', 'table'], null, null, false, true, null]],
+        578 => [[['_route' => 'admin.formation.findAllContain', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminformationController::findAllContain'], ['champ', 'table'], null, null, false, true, null]],
+        600 => [[['_route' => 'admin.formation.edit', '_controller' => 'App\\Controller\\admin\\AdminformationController::edit'], ['id'], null, null, false, true, null]],
+        625 => [[['_route' => 'admin.formation.suppr', '_controller' => 'App\\Controller\\admin\\AdminformationController::delete'], ['id'], null, null, false, true, null]],
+        691 => [[['_route' => 'admin.playlist.sort', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::sort'], ['champ', 'ordre', 'table'], null, null, false, true, null]],
+        731 => [[['_route' => 'admin.playlists.findallcontain', 'table' => '', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::findAllContain'], ['champ', 'table'], null, null, false, true, null]],
+        757 => [[['_route' => 'admin.playlist.edit', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::edit'], ['id'], null, null, false, true, null]],
+        779 => [
             [['_route' => 'admin.playlist.suppr', '_controller' => 'App\\Controller\\admin\\AdminplaylistsController::delete'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

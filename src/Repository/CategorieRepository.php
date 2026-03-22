@@ -42,6 +42,14 @@ class CategorieRepository extends ServiceEntityRepository
                 ->orderBy('c.name', 'ASC')   
                 ->getQuery()
                 ->getResult();        
-    }  
+    }
+
+    public function findAllForOneName($name){
+    return $this->createQueryBuilder('c')
+        ->where('c.name = :name')
+        ->setParameter('name', $name)
+        ->getQuery()
+        ->getResult();
+    }
     
 }

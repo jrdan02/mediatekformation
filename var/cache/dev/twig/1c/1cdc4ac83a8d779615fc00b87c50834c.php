@@ -154,9 +154,11 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
         yield "\">Playlists</a>
                     </li>
                     <li class=\"nav-item\">
-                        ";
-        // line 26
-        yield "                    </li>
+                          <a class=\"nav-link\" href=\"";
+        // line 25
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.categories");
+        yield "\">Categories</a>
+                    </li>
                 </ul>
                 
             </div>
@@ -228,7 +230,7 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  200 => 37,  181 => 36,  165 => 30,  159 => 26,  153 => 22,  147 => 19,  141 => 15,  136 => 12,  134 => 11,  128 => 8,  125 => 7,  115 => 6,  103 => 4,  93 => 3,  74 => 2,  62 => 37,  58 => 36,  56 => 6,  54 => 3,  52 => 2,  49 => 1,);
+        return array (  202 => 37,  183 => 36,  167 => 30,  159 => 25,  153 => 22,  147 => 19,  141 => 15,  136 => 12,  134 => 11,  128 => 8,  125 => 7,  115 => 6,  103 => 4,  93 => 3,  74 => 2,  62 => 37,  58 => 36,  56 => 6,  54 => 3,  52 => 2,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -257,7 +259,7 @@ class __TwigTemplate_65e3d6211f5ccfa0670ce5a017c6b55c extends Template
                           <a class=\"nav-link\" href=\"{{ path('admin.playlist') }}\">Playlists</a>
                     </li>
                     <li class=\"nav-item\">
-                        {#  <a class=\"nav-link\" href=\"{{ path('admin.categorie') }}\">Catégories</a>#}
+                          <a class=\"nav-link\" href=\"{{ path('admin.categories') }}\">Categories</a>
                     </li>
                 </ul>
                 

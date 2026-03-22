@@ -53,8 +53,14 @@ use Symfony\Component\HttpFoundation\Response;
     }
 
 
-    #[Route('admin/playlist', name:'admin.playlist')]
-
+   
+    /**
+     * accuile playlist
+     *
+     * @return Response
+     */
+     #[Route('admin/playlist', name:'admin.playlist')]
+    
     public function index():Response{
         $playlists=$this->playlistRespository->findAllOrderByName('ASC');
 
@@ -67,7 +73,18 @@ use Symfony\Component\HttpFoundation\Response;
     }
 
     #[Route('/admin/playlists/index/tri/{champ}/{ordre}/{table}',  name: 'admin.playlist.sort')]
-
+    
+    /**
+     *  trie pas ordre crosaint de deconsant 
+     *
+     * @param  mixed $request
+     * @param  mixed $champ
+     * @param  mixed $ordre
+     * @param  mixed $table
+     * @return Response
+     */
+    #[Route('/admin/playlists/index/tri/{champ}/{ordre}/{table}',  name: 'admin.playlist.sort')]
+    
     public function sort( Request $request, $champ, $ordre, $table = ""): Response {
      
             switch($champ){
@@ -81,17 +98,24 @@ use Symfony\Component\HttpFoundation\Response;
                 $playlists=$this->playlistRespository->find('ASC');
                 break;  
                  }
-
-            
-            $categories = $this->categorieRepository->findAll();
-        return $this->render("admin/playlists/index.html.twig", [
-             'playlists' => $playlists,
-            'categories' => $categories
+                $categories = $this->categorieRepository->findAll();
+                     return $this->render("admin/playlists/index.html.twig", [
+                     'playlists' => $playlists,
+                    'categories' => $categories
         ]);
-        }
+   }
     
              
-     #[Route('/admin/playlists/index/recherche/{champ}/{table}', name: 'admin.playlists.findallcontain')]
+      
+     /**
+      * recherche pas flitre 
+      *
+      * @param  mixed $champ
+      * @param  mixed $request
+      * @param  mixed $table
+      * @return Response
+      */
+     #[Route('/admin/playlists/index/recherche/{champ}/{table}', name: 'admin.playlists.findallcontain')] 
      public function findAllContain($champ, Request $request, $table=""): Response{
         if ($this->isCsrfTokenValid('filtre_' . $champ, $request->get('_token'))) {
             $valeur = $request->get("recherche");
@@ -105,10 +129,18 @@ use Symfony\Component\HttpFoundation\Response;
             ]);
         }
         return $this->redirectToRoute('admin.playlist');
-    }
+   }
 
-     #[Route('/admin/playlist/edit/{id}', name: 'admin.playlist.edit')]
      
+          
+     /**
+      * modidier par id 
+      *
+      * @param  mixed $id
+      * @param  mixed $request
+      * @return Response
+      */
+     #[Route('/admin/playlist/edit/{id}', name: 'admin.playlist.edit')]
      public function edit(int $id , Request $request):Response{
         $playlist=$this->playlistRespository->find($id); 
 
@@ -125,7 +157,14 @@ use Symfony\Component\HttpFoundation\Response;
 
     }
     
-    #[Route('/admin/playlist/add', name: 'admin.playlist.add')]
+    
+     /**
+      * function ajouter palylist
+      *
+      * @param  mixed $request
+      * @return Response
+      */
+     #[Route('/admin/playlist/add', name: 'admin.playlist.add')]  
      public function ajouterplaylist(Request $request):Response{
         $playlist= new Playlist();
         $formplaylist=$this->createForm(PlaylistType::class, $playlist); 
@@ -140,14 +179,21 @@ use Symfony\Component\HttpFoundation\Response;
             'formplaylist' => $formplaylist->createView()
 
         ]);
-     }
+    }
 
 
     
 
-
+     /**
+     * suppier par id en 
+     * verification lie a formation
+      *
+      * @param  mixed $playlist
+     * @return Response
+     */
     
-    #[Route('/admin/playlist/suppr/{id}', name: 'admin.playlist.suppr')]
+    #[Route('/admin/playlist/suppr/{id}', name: 'admin.playlist.suppr')]        
+       
         public function delete(Playlist $playlist): Response {
          $formationRata = $this->formationRepository->findAllForOnePlaylist($playlist->getId()); 
 
