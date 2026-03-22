@@ -69,7 +69,7 @@ class __TwigTemplate_a9ff45bfbba355309b2c4271fa2120d4 extends Template
         yield "        <h2> Modifie la formation </h2>
         ";
         // line 4
-        yield Twig\Extension\CoreExtension::include($this->env, $context, "_admin.formation.from.html.twig");
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "_admin.playlist.from.html.twig");
         yield "
     ";
         
@@ -110,7 +110,8 @@ class __TwigTemplate_a9ff45bfbba355309b2c4271fa2120d4 extends Template
         return new Source("{% extends \"baseadmin.html.twig\"  %}
 {% block body %}
         <h2> Modifie la formation </h2>
-        {{include ('_admin.formation.from.html.twig')}}
-    {%endblock %}   ", "admin/formation/formation.add.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/admin/formation/formation.add.html.twig");
+        {{ include('_admin.playlist.from.html.twig') }}
+    {%endblock %}   
+    ", "admin/formation/formation.add.html.twig", "/opt/homebrew/var/www/mediatekformation/mediatekformation/templates/admin/formation/formation.add.html.twig");
     }
 }

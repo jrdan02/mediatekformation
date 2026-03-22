@@ -3,13 +3,13 @@
 namespace App\Controller\admin; 
 
 use App\Entity\Formation;
-    use App\Repository\CategorieRepository;
-    use App\Repository\FormationRepository;
-    use App\Form\FormationType;
-    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\HttpFoundation\Response;
-    use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\CategorieRepository;
+use App\Repository\FormationRepository;
+use App\Form\FormationType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+ use Symfony\Component\Routing\Annotation\Route;
 
     class AdminformationController  extends AbstractController {
 
@@ -72,15 +72,14 @@ use App\Entity\Formation;
          */
         #[Route('/admin/formation/index/tri/{champ}/{ordre}/{table}',  name: 'admin.formation.sort')]
         public function sort( Request $request, $champ, $ordre, $table = ""): Response {
-            if($this->isCsrfTokenValid('filtre_' . $champ, $request->get('_token'))) {
+                
             $formations = $this->formationRepository->findAllOrderBy($champ, $ordre, $table);
             $categories = $this->categorieRepository->findAll();
             return $this->render('admin/formation/index.html.twig', [
                         'formations' => $formations,
                         'categories' => $categories
             ]);
-            }
-            return $this->redirectToRoute('admin.formation'); 
+            
         }
 
         
@@ -121,13 +120,13 @@ use App\Entity\Formation;
          * @param  mixed $request
          * @return Response
          */
-        public function edit(int $id , FormationRepository $formationRepository, Request $request):Response{
-            $formation=$formationRepository->find($id);
+        public function edit(int $id , Request $request):Response{
+            $formation=$this->formationRepository->find($id);
 
             $formformation=$this->createForm(FormationType::class, $formation);
             $formformation->handleRequest($request);
             if($formformation->isSubmitted() && $formformation->isValid()){
-                $formationRepository->add($formation);
+                $this->formationRepository->add($formation);
                 return $this->redirectToRoute('admin.formation');
             }
             return $this->render('admin/formation/formation.edit.html.twig',[
@@ -139,20 +138,19 @@ use App\Entity\Formation;
         #[Route('/admin/formation/add', name: 'admin.formation.add')]
          public function ajouterformation(Request $request):Response{
              $formation = new Formation();
-        $formFormation = $this->createForm(FormationType::class, $formation);
+            $formFormation = $this->createForm(FormationType::class, $formation);
         
-        $formFormation->handleRequest($request);
-        if($formFormation->isSubmitted() && $formFormation->isValid()) {
+            $formFormation->handleRequest($request);
+          if($formFormation->isSubmitted() && $formFormation->isValid()) {
             $this->formationRepository->add($formation, true);
             return $this->redirectToRoute('admin.formation');
         }
         
         return $this->render("admin/formation/formation.add.html.twig", [
-            'formation' => $formation,
             'formformation' => $formFormation->createView()
         ]);
     }
-    #[Route('/admin/formation.suppr/{id}', name: 'admin.formation.suppr')]        
+    #[Route('/admin/formation.suppr/{id}', name: 'admin.formation.suppr')]
         /**
          * suupier d'un formation 
          *
