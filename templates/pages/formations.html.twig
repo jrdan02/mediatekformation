@@ -75,12 +75,12 @@
                         {{ formation.publishedatstring }}
                     </td>
                     <td class="text-center">
-                        {% if formation.miniature %}
+                       {% if formation.miniature %}
                             <a href="{{ path('formations.showone', {id:formation.id}) }}">
-                                <img alt= "image nimature " src="{{ formation.miniature }}">
+                                <img alt="image namature formation" src="{{ formation.miniature }}">
                             </a>
                         {% endif %}
-                    </td>
+                    </td> 
                 </tr>
             {% endfor %}
         </tbody>

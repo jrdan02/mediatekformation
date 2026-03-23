@@ -231,14 +231,14 @@ class __TwigTemplate_d38c7aa137971320fd403588ad633c34 extends Template
             yield "
                     </td>
                     <td class=\"text-center\">
-                        ";
+                       ";
             // line 78
             if (CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 78)) {
                 // line 79
                 yield "                            <a href=\"";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("formations.showone", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "id", [], "any", false, false, false, 79)]), "html", null, true);
                 yield "\">
-                                <img alt= \"image nimature \" src=\"";
+                                <img alt=\"image namature formation\" src=\"";
                 // line 80
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 80), "html", null, true);
                 yield "\">
@@ -246,7 +246,7 @@ class __TwigTemplate_d38c7aa137971320fd403588ad633c34 extends Template
                         ";
             }
             // line 83
-            yield "                    </td>
+            yield "                    </td> 
                 </tr>
             ";
         }
@@ -369,12 +369,12 @@ class __TwigTemplate_d38c7aa137971320fd403588ad633c34 extends Template
                         {{ formation.publishedatstring }}
                     </td>
                     <td class=\"text-center\">
-                        {% if formation.miniature %}
+                       {% if formation.miniature %}
                             <a href=\"{{ path('formations.showone', {id:formation.id}) }}\">
-                                <img alt= \"image nimature \" src=\"{{ formation.miniature }}\">
+                                <img alt=\"image namature formation\" src=\"{{ formation.miniature }}\">
                             </a>
                         {% endif %}
-                    </td>
+                    </td> 
                 </tr>
             {% endfor %}
         </tbody>
