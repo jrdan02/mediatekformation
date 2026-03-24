@@ -6,7 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 class PlaylistsControllerTest extends WebTestCase{
-
+    
+    /**
+     * testFiltrePlaylist
+     * flitre de playslist 
+     * @return void
+     */
     public function testFiltrePlaylist(){
 
           $client = static::createClient();
@@ -19,7 +24,12 @@ class PlaylistsControllerTest extends WebTestCase{
         $this->assertSelectorTextContains('h5', 'Eclipse et Java');
     }
     
-    
+        
+    /**
+     * testTriPlaylist
+     * tri de playlist retirn h5
+     * @return void
+     */
     public function testTriPlaylist(){
         $client = static::createClient();
          $client->request('GET', '/playlists/tri/name/ASC');{
@@ -28,7 +38,12 @@ class PlaylistsControllerTest extends WebTestCase{
          }
 
     }
-
+    
+    /**
+     * testclikPlaylist
+     * verification lien de playlists
+     * @return void
+     */
     public function testclikPlaylist(){
         $client = static::createClient(); 
         $client->request('GET', '/playlists');

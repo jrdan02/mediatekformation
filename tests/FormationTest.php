@@ -11,7 +11,7 @@ class FormationTest extends TestCase{
  
  /**
   * testGetPublishedAtString
-  *
+  * test de la format date 
   * @return void
   */
  public function testGetPublishedAtString() {

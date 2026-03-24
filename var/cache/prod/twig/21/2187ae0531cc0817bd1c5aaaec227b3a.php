@@ -1,0 +1,139 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* admin/playlists/playlist.edit.html.twig */
+class __TwigTemplate_2ab5375d2e721572a73ed63596901f30 extends Template
+{
+    private $source;
+    private $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->blocks = [
+            'body' => [$this, 'block_body'],
+        ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "baseadmin.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $this->parent = $this->loadTemplate("baseadmin.html.twig", "admin/playlists/playlist.edit.html.twig", 1);
+        yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        // line 4
+        yield "
+<div class=\"container mt-4\">
+    <h2>Modifier la playlist</h2>
+    ";
+        // line 7
+        yield Twig\Extension\CoreExtension::include($this->env, $context, "_admin.playlist.from.html.twig");
+        yield "
+    <div class=\"row mt-4\">
+        <div class=\"col-5\">
+            <h5>Formations de la playlist :</h5>
+            ";
+        // line 11
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, ($context["playlist"] ?? null), "formations", [], "any", false, false, false, 11));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["formation"]) {
+            // line 12
+            yield "                  <div class='row mt-1'>
+                    <div class='col-md-auto'>
+                        ";
+            // line 14
+            if (CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 14)) {
+                // line 15
+                yield "                            <img alt=\"Image miniature   \" src='";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "miniature", [], "any", false, false, false, 15), "html", null, true);
+                yield "'>
+                        ";
+            }
+            // line 17
+            yield "                    </div>
+                <div class=\"col d-flex align-items-center\">
+                    ";
+            // line 19
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["formation"], "title", [], "any", false, false, false, 19), "html", null, true);
+            yield "
+                </div>
+            ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 22
+            yield "                <div class=\"text-muted\">
+                    Aucune formation liée
+                </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formation'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 26
+        yield "
+        </div>
+    </div>
+
+</div>
+
+";
+        return; yield '';
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName()
+    {
+        return "admin/playlists/playlist.edit.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo()
+    {
+        return array (  101 => 26,  92 => 22,  84 => 19,  80 => 17,  74 => 15,  72 => 14,  68 => 12,  63 => 11,  56 => 7,  51 => 4,  47 => 3,  36 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("", "admin/playlists/playlist.edit.html.twig", "/opt/homebrew/var/www/mediatekformation/templates/admin/playlists/playlist.edit.html.twig");
+    }
+}

@@ -7,7 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface; 
 
 class FormationValidationsTest extends KernelTestCase{
-
+      
+      /**
+       * formation
+       * creation d'un formation
+       * @return Formation
+       */
       public function formation():Formation{
         $formation= new formation(); 
         $formation->setTitle('test valide');
@@ -18,7 +23,12 @@ class FormationValidationsTest extends KernelTestCase{
       }
 
     
-
+    
+    /**
+     * testvalidformation
+     *test de valisation de formation
+     * @return void
+     */
     public function testvalidformation(){
         self::bootKernel(); 
         $valide=static::getContainer()->get(ValidatorInterface::class);
