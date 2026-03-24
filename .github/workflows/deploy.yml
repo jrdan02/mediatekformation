@@ -1,21 +1,18 @@
-name: Deploy mediatekformation
 
 on: push
-
+name: Deploy mediatekformation
 jobs:
   web-deploy:
-    name: Deploy to server
+    name: Deploy  to server
     runs-on: ubuntu-latest
-
     steps:
       - name: Get latest code
         uses: actions/checkout@v2
-
-      - name: Upload via FTP
+    
+      - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: tp.adjo4744.odns.fr
           username: mediatekformation@mediatekformation.fr
-          password: ${{secrets.FTP_PASSWORD}}
-          server-dir: /home2/adjo4744/mediatekformation/
-          debug: true
+          server-dir: /public_html/mediatekformation/
+          password: ${{ secrets.ftp_password }}
