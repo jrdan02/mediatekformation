@@ -17,4 +17,4 @@ jobs:
           server: tp.adjo4744.odns.fr
           username: adjo4744
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /home2/adjo4744/mediatekformation/
+          server-dir: /home2/adjo4744/mediatekformation/  
