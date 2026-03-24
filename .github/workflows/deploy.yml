@@ -18,3 +18,4 @@ jobs:
           username: mediatekformation@mediatekformation.fr
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /home2/adjo4744/mediatekformation/
+          debug: true
