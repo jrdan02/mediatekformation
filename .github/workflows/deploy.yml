@@ -15,6 +15,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: tp.adjo4744.odns.fr
-          username: adjo4744
+          username: mediatekformation@mediatekformation.fr
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /home2/adjo4744/mediatekformation/  
+          server-dir: /home2/adjo4744/mediatekformation/
